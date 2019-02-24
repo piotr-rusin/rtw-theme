@@ -1,6 +1,8 @@
 The MIT License (MIT)
 
-Copyright (c) 2017 Yihui Xie
+Copyright (c) 2017 Yihui Xie - for template code and assets originally taken
+from [XMin project](https://github.com/yihui/hugo-xmin)  
+Copyright (c) 2019 Piotr Rusin
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
