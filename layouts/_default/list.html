@@ -6,13 +6,16 @@
 
 {{ .Content }}
 
+{{ range .Pages.GroupByDate "2006" }}
+<h2>{{ .Key }}</h2>
 <ul>
-  {{ range (where .Data.Pages "Section" "!=" "") }}
+{{ range .Pages }}
   <li>
-    <span class="date">{{ .Date.Format "2006/01/02" }}</span>
-    <a href="{{ .URL }}">{{ .Title | markdownify }}</a>
+    <span class="date">{{ .Date.Format "02 Jan" }}</span> - 
+    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
   </li>
-  {{ end }}
+{{ end }}
 </ul>
+{{ end }}
 
 {{ partial "footer.html" . }}

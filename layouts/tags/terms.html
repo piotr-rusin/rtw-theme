@@ -1,0 +1,20 @@
+{{ partial "header.html" . }}
+
+<h1>{{ .Title }}</h1>
+
+<ul class="terms">
+  {{ range $key, $value := .Data.Terms.Alphabetical }}
+    {{ $name := .Name }}
+    {{ $count := .Count }}
+    {{ if (gt $count 1) }}
+      <li>
+        <a href="{{ (print "/" $.Data.Plural "/" $name | urlize) | relURL }}">
+          {{ $name }}
+        </a>
+        ({{ $count }})
+      </li>
+    {{ end }}
+  {{ end }}
+</ul>
+
+{{ partial "footer.html" . }}
